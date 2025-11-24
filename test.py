@@ -60,7 +60,7 @@ class ChromeTests(BrowserStackTestBase):
         return options
     
     def test_01_sign_up(self):
-        print("\n=== Test 1: Sign Up Page ===")
+        print("\nTest 1: Sign Up Page")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -88,7 +88,7 @@ class ChromeTests(BrowserStackTestBase):
             self.fail("Email field not found on Sign Up page")
     
     def test_02_log_in(self):
-        print("\n=== Test 2: Log In ===")
+        print("\n Test 2: Log In")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -146,7 +146,7 @@ class ChromeTests(BrowserStackTestBase):
             self.fail("Login failed - Profile button not found")
     
     def test_03_log_out(self):
-        print("\n=== Test 3: Log Out ===")
+        print("\n Test 3: Log Out")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -207,7 +207,7 @@ class ChromeTests(BrowserStackTestBase):
             self.fail("Logout failed - Login button not found")
     
     def test_04_search_pin(self):
-        print("\n=== Test 4: Search Pin ===")
+        print("\n Test 4: Search Pin")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -283,7 +283,7 @@ class FirefoxTests(BrowserStackTestBase):
         return options
     
     def test_01_sign_up(self):
-        print("\n=== Test 1: Sign Up Page ===")
+        print("\n Test 1: Sign Up Page")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -302,7 +302,7 @@ class FirefoxTests(BrowserStackTestBase):
         self.assertTrue(email_field.is_displayed(), "Email field should be visible")
     
     def test_02_log_in(self):
-        print("\n=== Test 2: Log In ===")
+        print("\nTest 2: Log In ")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -332,7 +332,7 @@ class FirefoxTests(BrowserStackTestBase):
         self.assertTrue(profile_element.is_displayed(), "Should be logged in")
     
     def test_03_log_out(self):
-        print("\n=== Test 3: Log Out ===")
+        print("\n Test 3: Log Out")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -376,7 +376,7 @@ class FirefoxTests(BrowserStackTestBase):
         self.assertTrue(login_button.is_displayed(), "Should be logged out")
     
     def test_04_search_pin(self):
-        print("\n=== Test 4: Search Pin ===")
+        print("\n Test 4: Search Pin ")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -428,7 +428,7 @@ class SafariTests(BrowserStackTestBase):
         return options
     
     def test_01_sign_up(self):
-        print("\n=== Test 1: Sign Up Page ===")
+        print("\n Test 1: Sign Up Page")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -447,7 +447,7 @@ class SafariTests(BrowserStackTestBase):
         self.assertTrue(email_field.is_displayed(), "Email field should be visible")
     
     def test_02_log_in(self):
-        print("\n=== Test 2: Log In ===")
+        print("\n Test 2: Log In")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -477,7 +477,7 @@ class SafariTests(BrowserStackTestBase):
         self.assertTrue(profile_element.is_displayed(), "Should be logged in")
     
     def test_03_log_out(self):
-        print("\n=== Test 3: Log Out ===")
+        print("\n Test 3: Log Out")
         
         # Log in first
         self.driver.get("https://www.pinterest.com")
@@ -523,7 +523,7 @@ class SafariTests(BrowserStackTestBase):
         self.assertTrue(login_button.is_displayed(), "Should be logged out")
     
     def test_04_search_pin(self):
-        print("\n=== Test 4: Search Pin ===")
+        print("\n Test 4: Search Pin")
         
         self.driver.get("https://www.pinterest.com")
         time.sleep(2)
@@ -582,16 +582,12 @@ if __name__ == '__main__':
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(SafariTests))
     
     print(f"\nTotal tests: 12 (4 tests × 3 browsers)")
-    print("="*60)
     
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
     
-    print("\n" + "="*60)
     print("TEST SUMMARY")
-    print("="*60)
     print(f"Tests run: {result.testsRun}")
     print(f"Successes: {result.testsRun - len(result.failures) - len(result.errors)}")
     print(f"Failures: {len(result.failures)}")
     print(f"Errors: {len(result.errors)}")
-    print("="*60)

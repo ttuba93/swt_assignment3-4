@@ -568,9 +568,7 @@ class SafariTests(BrowserStackTestBase):
 if __name__ == '__main__':
     suite = unittest.TestSuite()
     
-    print("="*60)
     print("Pinterest BrowserStack Test Suite")
-    print("="*60)
     
     print("\nAdding Chrome tests...")
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(ChromeTests))
